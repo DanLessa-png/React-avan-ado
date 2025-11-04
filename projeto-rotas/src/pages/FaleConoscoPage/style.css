@@ -1,0 +1,63 @@
+
+.contato {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.contato h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  color: #2c3e50;
+  text-align: center;
+  font-weight: 700;
+}
+
+.contato hr {
+  border: none;
+  height: 5px;
+  background: linear-gradient(90deg, #2980b9, #6dd5fa, #2980b9);
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+
+.contato p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #555;
+}
+
+
+.contato ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+
+.contato ul li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+
+.contato ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  background-color: #2980b9;
+  border-radius: 50%;
+}

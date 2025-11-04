@@ -1,0 +1,10 @@
+/* Footer styles */
+.footer { display:flex; gap:1rem; align-items:center; justify-content:space-between; padding:1rem; font-size:0.95rem; color:var(--muted); }
+.footer strong { color:var(--text); }
+.footer div { min-width:0; }
+.footer .copy { text-align:right; color:var(--muted); font-size:0.9rem; }
+
+@media (max-width:700px) {
+	.footer { flex-direction:column; text-align:center; gap:0.5rem; }
+	.footer .copy { text-align:center; }
+}

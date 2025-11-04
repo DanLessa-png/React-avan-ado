@@ -1,0 +1,12 @@
+/* Header component styles */
+.header {
+    padding: 0.5rem 1rem;
+}
+
+.header__ { display:flex; align-items:center; gap:0.75rem; }
+.header__ span { font-size: 1.05rem; color: var(--text); font-weight: 700; }
+.header__ img { width:90px; height:80px; object-fit:contain; display:block; }
+
+.nav { display:flex; gap: 0.5rem; align-items:center; }
+.nav a { color: var(--muted); padding: 0.45rem 0.6rem; border-radius: 8px; font-weight:600; }
+.nav a:hover, .nav a.active { color: var(--brand); background: rgba(15,76,129,0.04); }
