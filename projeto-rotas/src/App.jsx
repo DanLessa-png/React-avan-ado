@@ -1,16 +1,12 @@
-import { useState } from 'react'
 import './App.css'
 import Footer from './components/Footer';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
-import { SobreNosPage } from './pages/SobreNosPage';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SobreNosPage from './pages/SobreNosPage';
+import { Routes, Route } from 'react-router-dom';
 import { FaleConosco } from './pages/FaleConoscoPage';
 
-
-
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>

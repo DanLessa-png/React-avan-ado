@@ -1,5 +1,80 @@
 /* Header component styles */
 .header {
+  padding: 1rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--surface-3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.header__ { 
+  display: flex; 
+  align-items: center; 
+  gap: 1rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.header__ span { 
+  font-size: 1.25rem; 
+  color: var(--text); 
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(to right, var(--brand), var(--brand-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header__ img { 
+  width: 42px; 
+  height: 42px; 
+  object-fit: contain; 
+  display: block;
+  filter: brightness(1.1) contrast(1.1);
+}
+
+.nav { 
+  display: flex; 
+  gap: 1rem; 
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav a { 
+  color: var(--text-2); 
+  padding: 0.5rem 0.75rem; 
+  border-radius: var(--radius); 
+  font-weight: 500;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.nav a:hover, 
+.nav a.active { 
+  color: var(--brand-light);
+  background: var(--glass-2);
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--brand);
+  transition: all 0.2s ease;
+  transform: translateX(-50%);
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 30px;
+}mponent styles */
+.header {
     padding: 0.5rem 1rem;
 }
 

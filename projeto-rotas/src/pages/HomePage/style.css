@@ -1,23 +1,259 @@
 /* HomePage styles: hero, features and CTAs */
-.home-hero { margin: 0 auto 2rem auto; max-width: 1100px; padding: 1rem; }
-.hero-inner { display: grid; grid-template-columns: 1fr 320px; gap: 1.25rem; align-items: start; }
-.hero-content { padding: 1.25rem 1.5rem; }
-.hero-content h1 { font-size: 2.2rem; margin-bottom: 0.5rem; color: var(--text); }
-.lead { font-size: 1.05rem; color: var(--muted); margin-bottom: 1rem; }
-.hero-ctas { display:flex; gap:0.75rem; align-items:center; }
-.btn-secondary { display:inline-block; padding:0.5rem 0.85rem; border-radius:8px; background:transparent; border:1px solid rgba(15,23,36,0.06); color:var(--text); font-weight:600; text-decoration:none; }
+.home-hero { 
+    margin: 0 auto 4rem auto; 
+    max-width: var(--max-width); 
+    padding: 2rem 1rem; 
+}
 
-.hero-aside { padding:1rem; }
-.hero-aside h3 { margin-top:0; margin-bottom:0.5rem; }
-.hero-aside .muted { margin-bottom: 1rem; }
+.hero-inner { 
+    display: grid; 
+    grid-template-columns: 1fr 320px; 
+    gap: 2rem; 
+    align-items: start; 
+    position: relative;
+}
 
-.features { margin-top: 2rem; display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; }
-.feature { padding:1rem; text-align:left; }
-.feature h4 { margin-bottom:0.5rem; color:var(--brand); }
-.feature p { margin:0; color:var(--muted); }
+.hero-content { 
+    padding: 1.25rem 1.5rem; 
+    animation: fadeIn 0.8s ease-out;
+}
 
-@media (max-width: 900px) {
-	.hero-inner { grid-template-columns: 1fr; }
-	.features { grid-template-columns: 1fr; }
-	.hero-aside { order: 2; }
+.badge {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background: var(--glass-2);
+    color: var(--brand);
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.hero-content h1 { 
+    font-size: 3rem; 
+    margin-bottom: 1rem; 
+    color: var(--text);
+    font-family: var(--font-heading);
+    line-height: 1.1;
+}
+
+.lead { 
+    font-size: 1.15rem; 
+    color: var(--text-2); 
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.hero-ctas { 
+    display: flex; 
+    gap: 1rem; 
+    align-items: center;
+}
+
+.btn-secondary { 
+    display: inline-block; 
+    padding: 0.6rem 1.2rem; 
+    border-radius: 8px; 
+    background: var(--glass); 
+    border: 1px solid var(--glass-2); 
+    color: var(--text); 
+    font-weight: 600; 
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background: var(--glass-2);
+    transform: translateY(-1px);
+}
+
+.hero-aside { 
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 0.8s ease-out;
+    background: var(--surface-2);
+    border: 1px solid var(--glass-2);
+}
+
+.card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--brand) 0%, transparent 70%);
+    opacity: 0.05;
+    pointer-events: none;
+    animation: rotate 15s linear infinite;
+}
+
+.hero-aside h3 { 
+    margin-top: 0; 
+    margin-bottom: 1rem;
+    color: var(--text);
+    font-family: var(--font-heading);
+}
+
+.hero-aside .muted { 
+    margin-bottom: 1.5rem;
+    color: var(--text-2);
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto 4rem;
+    padding: 2rem;
+    background: var(--surface-2);
+    border-radius: var(--radius);
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1rem;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--brand);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+}
+
+.stat-label {
+    color: var(--text-2);
+    font-size: 0.95rem;
+}
+
+/* Features Section */
+.features {
+    max-width: var(--max-width);
+    margin: 0 auto 4rem;
+    padding: 0 1rem;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: var(--font-heading);
+    color: var(--text);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.feature {
+    padding: 1.5rem;
+    text-align: left;
+    background: var(--surface-2);
+    border: 1px solid var(--glass-2);
+    transition: transform 0.2s ease;
+}
+
+.feature:hover {
+    transform: translateY(-4px);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.feature h4 {
+    margin-bottom: 1rem;
+    color: var(--text);
+    font-family: var(--font-heading);
+}
+
+.feature p {
+    margin: 0;
+    color: var(--text-2);
+    font-size: 0.95rem;
+}
+
+/* Testimonials */
+.testimonials {
+    max-width: var(--max-width);
+    margin: 0 auto 4rem;
+    padding: 0 1rem;
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: var(--font-heading);
+    color: var(--text);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.testimonial {
+    padding: 1.5rem;
+    background: var(--surface-2);
+    border: 1px solid var(--glass-2);
+}
+
+.testimonial-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.testimonial-footer strong {
+    color: var(--text);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .hero-inner { 
+        grid-template-columns: 1fr; 
+        gap: 2rem;
+    }
+    .hero-content h1 { font-size: 2.5rem; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .stats { flex-direction: column; gap: 2rem; }
+}
+
+@media (max-width: 600px) {
+    .features-grid { grid-template-columns: 1fr; }
+    .hero-ctas { flex-direction: column; width: 100%; }
+    .hero-ctas a { width: 100%; text-align: center; }
+    .hero-content h1 { font-size: 2rem; }
 }
