@@ -1,0 +1,68 @@
+/* Header component styles */
+.header {
+    padding: 1rem 2rem;
+    background: #a8bace;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header__logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem;
+}
+
+.pharmacy-icon {
+    font-size: 2rem;
+    color: #1e4d8c;
+}
+
+.pharmacy-name { 
+    font-size: 1.5rem; 
+    color: #1e4d8c; 
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav { 
+    display: flex; 
+    gap: 2rem; 
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav a { 
+    color: #333; 
+    padding: 0.5rem 1rem; 
+    border-radius: 4px; 
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav a:hover, 
+.nav a.active { 
+    color: #1e4d8c;
+    background: #e8f0fe;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #1e4d8c;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+    width: 100%;
+}
