@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 export function HomePage(){
     const [stats, setStats] = useState({
         clientes: 0,
-        economia: 0,
+        produtos: 0,
         anos: 0
     });
 
@@ -17,9 +17,9 @@ export function HomePage(){
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
                 setStats(prev => ({
-                    clientes: Math.floor(progress * 250),
-                    economia: Math.floor(progress * 32),
-                    anos: Math.floor(progress * 15)
+                    clientes: Math.floor(progress * 5000),
+                    produtos: Math.floor(progress * 1500),
+                    anos: Math.floor(progress * 25)
                 }));
                 if (progress < 1) {
                     window.requestAnimationFrame(step);
@@ -51,21 +51,21 @@ export function HomePage(){
             <section className="home-hero">
                 <div className="hero-inner">
                     <div className="hero-content">
-                        <span className="badge">Contabilidade Digital</span>
-                        <h1>Contabilidade que impulsiona seu negócio</h1>
-                        <p className="lead">Soluções fiscais, contábeis e consultoria financeira pensadas para pequenas e médias empresas. Simples, confiável e com atendimento dedicado.</p>
+                        <span className="badge">Farmácia de Confiança</span>
+                        <h1>Cuidando da sua saúde com dedicação</h1>
+                        <p className="lead">Medicamentos, produtos de saúde e bem-estar com atendimento personalizado 24 horas. Sua saúde em primeiro lugar.</p>
 
                         <div className="hero-ctas">
-                            <Link to="/contato" className="btn-primary">Fale Conosco</Link>
+                            <Link to="/medicamentos" className="btn-primary">Ver Medicamentos</Link>
                             <a href="#services" className="btn-secondary">Nossos Serviços</a>
                         </div>
                     </div>
 
                     <div className="hero-aside card">
                         <div className="card-glow"></div>
-                        <h3>Comece agora</h3>
-                        <p className="muted">Agende uma avaliação gratuita com nossa equipe e descubra como melhorar seus resultados financeiros.</p>
-                        <Link to="/contato" className="btn-primary">Agendar Avaliação</Link>
+                        <h3>Entrega em Casa</h3>
+                        <p className="muted">Receba seus medicamentos no conforto da sua casa. Entrega rápida e segura para toda a cidade.</p>
+                        <Link to="/contato" className="btn-primary">Solicitar Entrega</Link>
                     </div>
                 </div>
             </section>
@@ -73,15 +73,15 @@ export function HomePage(){
             <section className="stats">
                 <div className="stat-item">
                     <span className="stat-number">{stats.clientes}+</span>
-                    <span className="stat-label">Clientes Ativos</span>
+                    <span className="stat-label">Clientes Atendidos</span>
                 </div>
                 <div className="stat-item">
-                    <span className="stat-number">R${stats.economia}M+</span>
-                    <span className="stat-label">Economia Gerada</span>
+                    <span className="stat-number">{stats.produtos}+</span>
+                    <span className="stat-label">Produtos Disponíveis</span>
                 </div>
                 <div className="stat-item">
                     <span className="stat-number">{stats.anos}+</span>
-                    <span className="stat-label">Anos no Mercado</span>
+                    <span className="stat-label">Anos de Experiência</span>
                 </div>
             </section>
 
@@ -89,19 +89,24 @@ export function HomePage(){
                 <h2>Nossos Serviços</h2>
                 <div className="features-grid">
                     <div className="feature card">
-                        <div className="feature-icon">📊</div>
-                        <h4>Contabilidade Fiscal</h4>
-                        <p className="muted">Rotinas fiscais, apuração de impostos e obrigações acessórias com precisão técnica.</p>
+                        <div className="feature-icon">�</div>
+                        <h4>Medicamentos</h4>
+                        <p className="muted">Ampla variedade de medicamentos genéricos e de marca com os melhores preços.</p>
                     </div>
                     <div className="feature card">
-                        <div className="feature-icon">💰</div>
-                        <h4>Gestão Financeira</h4>
-                        <p className="muted">Relatórios, fluxo de caixa e KPIs para tomada de decisão segura.</p>
+                        <div className="feature-icon">�</div>
+                        <h4>Entrega 24h</h4>
+                        <p className="muted">Entrega rápida e segura de medicamentos em toda a cidade, 24 horas por dia.</p>
                     </div>
                     <div className="feature card">
-                        <div className="feature-icon">🎯</div>
-                        <h4>Consultoria</h4>
-                        <p className="muted">Planejamento tributário e orientação estratégica para crescimento sustentável.</p>
+                        <div className="feature-icon">👨‍⚕️</div>
+                        <h4>Atenção Farmacêutica</h4>
+                        <p className="muted">Orientação profissional e acompanhamento farmacêutico personalizado.</p>
+                    </div>
+                    <div className="feature card">
+                        <div className="feature-icon">💉</div>
+                        <h4>Aplicação de Injetáveis</h4>
+                        <p className="muted">Serviço de aplicação de medicamentos injetáveis por profissionais capacitados.</p>
                     </div>
                 </div>
             </section>
@@ -111,20 +116,29 @@ export function HomePage(){
                 <div className="testimonials-grid">
                     <div className="testimonial card">
                         <div className="testimonial-content">
-                            <p>"A equipe é extremamente profissional e nos ajudou a reduzir custos significativamente."</p>
+                            <p>"Ótimo atendimento e preços justos. A entrega em casa é muito prática e pontual!"</p>
                         </div>
                         <footer className="testimonial-footer">
-                            <strong>Maria Silva</strong>
-                            <span className="muted">CEO, Tech Solutions</span>
+                            <strong>Ana Paula</strong>
+                            <span className="muted">Cliente desde 2020</span>
                         </footer>
                     </div>
                     <div className="testimonial card">
                         <div className="testimonial-content">
-                            <p>"Excelente suporte técnico e atendimento personalizado. Recomendo fortemente!"</p>
+                            <p>"Os farmacêuticos são muito atenciosos e sempre tiram todas as minhas dúvidas."</p>
                         </div>
                         <footer className="testimonial-footer">
-                            <strong>João Santos</strong>
-                            <span className="muted">Diretor, Santos & Cia</span>
+                            <strong>Carlos Eduardo</strong>
+                            <span className="muted">Cliente desde 2019</span>
+                        </footer>
+                    </div>
+                    <div className="testimonial card">
+                        <div className="testimonial-content">
+                            <p>"Melhor farmácia da região! Sempre encontro todos os medicamentos que preciso."</p>
+                        </div>
+                        <footer className="testimonial-footer">
+                            <strong>Marina Costa</strong>
+                            <span className="muted">Cliente desde 2021</span>
                         </footer>
                     </div>
                 </div>

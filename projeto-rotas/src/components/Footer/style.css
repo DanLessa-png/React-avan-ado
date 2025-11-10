@@ -1,54 +1,197 @@
 /* Footer styles */
 .footer { 
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    border-top: 1px solid var(--surface-3);
-    background: var(--surface);
+    background: #a8bace;
+    color: #333;
+    padding: 3rem 1rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid #e0e0e0;
 }
 
-.footer div {
-    color: var(--text-2);
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    padding: 0 2rem 2rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.footer-section h3 {
+    color: #1e4d8c;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    font-weight: 600;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 2px;
+    background: #1e4d8c;
+}
+
+.footer-section p {
+    color: #333;
+    margin-bottom: 0.8rem;
     font-size: 0.95rem;
     line-height: 1.6;
 }
 
-.footer strong {
-    color: var(--text);
-    font-family: 'Playfair Display', serif;
+.brand-name {
     display: block;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(to right, var(--brand), var(--brand-light));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 1.3rem;
+    color: #1e4d8c;
+    margin-bottom: 1rem;
 }
 
-.footer .copy {
-    text-align: right;
-    color: var(--muted);
-    font-size: 0.9rem;
+.footer-section .destaque {
+    color: #1e4d8c;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background: #e8f0fe;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.company-info, .emergency-contact, .horarios, .services-links {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.services-links {
+    margin-top: 1rem;
+}
+
+.regular-hours p {
+    margin: 0.3rem 0;
+}
+
+.whatsapp {
+    color: #1e4d8c;
+    font-weight: bold;
+}
+
+.footer-section nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-section nav a {
+    color: #1e4d8c;
+    text-decoration: none;
     padding: 0.5rem;
-    background: var(--surface-2);
-    border-radius: var(--radius);
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
-@media (max-width: 700px) {
-    .footer {
-        flex-direction: column;
+.footer-section nav a:hover {
+    color: #1e4d8c;
+    background: #e8f0fe;
+    border-radius: 4px;
+    transform: translateX(5px);
+}
+
+.farmaceutico {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(30, 77, 140, 0.1);
+    background: #e8f0fe;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.telefone {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1e4d8c;
+    background: #e8f0fe;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+address {
+    color: #e8f0fe;
+    font-style: normal;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    background: #1e4d8c;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+    border-radius: 12px 12px 0 0;
+}
+
+.social-links {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.copy {
+    color: #e8f0fe;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
         text-align: center;
-        gap: 1.5rem;
-        padding: 2rem 1rem;
     }
 
-    .footer .copy {
-        text-align: center;
-        width: 100%;
-        padding: 1rem;
-        background: var(--surface-2);
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-section nav {
+        align-items: center;
+    }
+
+    .social-links {
+        margin: 1rem 0;
     }
 }

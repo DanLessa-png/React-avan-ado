@@ -1,22 +1,20 @@
 import './style.css';
 import { Link, NavLink } from 'react-router-dom';
-import logo from '../../assets/logo.png';
-
 
 export function Header() {
     return (
         <header className="header">
-            <div className='header__'>
+            <div className='header__logo'>
                 <Link to='/'>
-                <img src={logo} alt="Logo da Contabilidade" />
-                <span>Contabilidade Dendezeiros</span>
+                    <span className="pharmacy-icon">💊</span>
+                    <span className="pharmacy-name">PharmaCare Plus</span>
                 </Link>
             </div>
             <nav className='nav'>
-                
-                <NavLink to="/sobre"><br />Sobre Nós</NavLink>
-                <NavLink to="/contato"><br />Fale Conosco</NavLink>
-                
+                <NavLink to="/">Início</NavLink>
+                <NavLink to="/medicamentos">Medicamentos</NavLink>
+                <NavLink to="/sobre">Nossa Farmácia</NavLink>
+                <NavLink to="/contato">Atendimento</NavLink>
             </nav>
         </header>
     );
